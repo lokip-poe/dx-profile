@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>東 正輝 - 現場が使えるDX支援</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a365d;
+      --navy-light: #2c5282;
+      --accent: #ed8936;
+      --accent-hover: #dd6b20;
+      --bg: #f7fafc;
+      --card: #ffffff;
+      --text: #2d3748;
+      --text-light: #718096;
+      --border: #e2e8f0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.8;
+    }
+    a { color: var(--navy-light); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header */
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 4rem 1rem 3rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    header .tagline { font-size: 1.1rem; opacity: 0.9; margin-bottom: 1.5rem; }
+    header .location { font-size: 0.9rem; opacity: 0.7; }
+    header .cta-group { margin-top: 1.5rem; }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      font-weight: 500;
+      transition: all 0.2s;
+      margin: 0.25rem;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      text-decoration: none;
+    }
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: white;
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    /* Section */
+    section { padding: 3rem 1rem; max-width: 800px; margin: 0 auto; }
+    section h2 {
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid var(--accent);
+      display: inline-block;
+    }
+
+    /* About */
+    .about-text { margin-top: 1rem; }
+    .about-text p { margin-bottom: 1rem; }
+    .strength-box {
+      background: var(--card);
+      border-left: 4px solid var(--accent);
+      padding: 1.25rem;
+      margin-top: 1rem;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    /* Cards */
+    .cards { display: grid; gap: 1.25rem; margin-top: 1.5rem; }
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+    }
+    .card-tag {
+      display: inline-block;
+      background: #ebf8ff;
+      color: var(--navy-light);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      margin-bottom: 0.5rem;
+    }
+    .card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--navy); }
+    .card p { font-size: 0.95rem; color: var(--text-light); }
+
+    /* Tools */
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .tool-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Templates */
+    .template-coming {
+      background: #fffaf0;
+      border: 2px dashed var(--accent);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .template-coming p { color: var(--text-light); }
+
+    /* Contact */
+    .contact-box {
+      background: var(--navy);
+      color: white;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .contact-box h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    .contact-box p { opacity: 0.85; margin-bottom: 1rem; }
+    .contact-box .btn-primary { margin-top: 0.5rem; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-light);
+      font-size: 0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      header .tagline { font-size: 1rem; }
+      section { padding: 2rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>東 正輝</h1>
+    <p class="tagline">現場が使えるDXを、身の丈で。</p>
+    <p class="location">京都府 木津川市 加茂町</p>
+    <div class="cta-group">
+      <a href="#contact" class="btn btn-primary">お問い合わせ</a>
+      <a href="#works" class="btn btn-outline">実績を見る</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="about-text">
+      <p>約10年、製造現場で手を動かしてきました。直流電源盤の組立・配線・検査から、構造設計、リチウムイオン電池装置の組立まで。</p>
+      <p>そんな中で「手書きのチェックリストをExcelに」「形骸化した在庫管理システムを現場に根付かせる」といった、現場目線のIT活用を続けてきました。</p>
+      <div class="strength-box">
+        <strong>「ツールを導入したのに使われていない」</strong>という、よくあるDXの失敗を立て直すことを得意としています。<br>
+        約10年の現場経験があり、「現場で本当に使えるか」を判断したうえで仕組みを設計できることが、他のIT専門家にはない強みです。
+      </div>
+    </div>
+  </section>
+
+  <section id="works">
+    <h2>実績</h2>
+    <div class="cards">
+      <div class="card">
+        <span class="card-tag">工程管理DX</span>
+        <h3>電動ケーブル製造業（従業員20名規模）</h3>
+        <p>Notionを活用し、製品ごとにQRコードを発行。現場の携帯端末から工程状況をリアルタイムに把握。「今どこにある」「いつ仕上がる」を可視化しました。</p>
+      </div>
+      <div class="card">
+        <span class="card-tag">在庫管理DX</span>
+        <h3>OEM製造業（従業員30名規模）</h3>
+        <p>形骸化していたzaicoを再設計し、運用定着まで担当。自部署でスモールスタート→全社展開へ。協力会社（下請け）への波及まで実現し、棚卸業務を効率化しました。</p>
+      </div>
+      <div class="card">
+        <span class="card-tag">業務自動化</span>
+        <h3>電源システム製造業（従業員50名規模）</h3>
+        <p>検査データの入力業務をExcel VBAで自動化・標準化。手作業でかかっていた時間を大幅に削減し、ヒューマンエラーも減らしました。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tools">
+    <h2>対応可能ツール</h2>
+    <div class="tool-grid">
+      <div class="tool-item">Notion</div>
+      <div class="tool-item">zaico</div>
+      <div class="tool-item">Excel VBA</div>
+      <div class="tool-item">ノーコード</div>
+      <div class="tool-item">Googleスプレッドシート</div>
+      <div class="tool-item">LINE公式</div>
+      <div class="tool-item">Googleビジネス</div>
+      <div class="tool-item">Square</div>
+    </div>
+  </section>
+
+  <section id="templates">
+    <h2>Notionテンプレ配布</h2>
+    <p>個人店・小規模事業者向けのNotionテンプレートを順次公開しています。</p>
+    <div class="template-coming">
+      <p>🚧 準備中</p>
+      <p>小規模製造業向け工程管理テンプレート / 個人店向け顧客台帳テンプレート など</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ</h2>
+    <div class="contact-box">
+      <h3>まずは気軽にご相談ください</h3>
+      <p>木津川市を中心に、京都府内の中小企業・個人事業主様を対象に活動しています。<br>
+      「こんなこと相談していいのかな？」という小さな悩みでも大丈夫です。</p>
+      <a href="mailto:contact@example.com" class="btn btn-primary">メールで相談する</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>東 正輝 - 現場が使えるDX支援</p>
+    <p>京都府 木津川市 加茂町</p>
+  </footer>
+
+</body>
+</html>
